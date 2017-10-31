@@ -18,9 +18,8 @@ const disabledMethods = [
   'upsertWithWhere',
 ]
 
+module.exports = function(Post) {
 
-module.exports = (Author) => {
-
-  disabledMethods.forEach(method => Author.disableRemoteMethodByName(method))
+  disabledMethods.forEach(method => Post.disableRemoteMethodByName(method))
 
 };

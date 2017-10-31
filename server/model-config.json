@@ -36,7 +36,11 @@
     "dataSource": "db",
     "public": false
   },
-  "Author": {
+  "Profile": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Post": {
     "dataSource": "db",
     "public": true
   }

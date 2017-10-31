@@ -1,17 +1,16 @@
 {
-  "name": "Author",
+  "name": "Profile",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true,
-    "idInjection": true,
     "forceId": false
   },
   "properties": {
     "id": {
       "type": "string",
-      "required": true,
       "id": true,
+      "required": true,
       "defaultFn": "uuidv4"
     },
     "email": {
@@ -41,7 +40,16 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "posts": {
+      "type": "hasMany",
+      "model": "Post",
+      "foreignKey": "",
+      "scope": {
+        "order": "date desc"
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }
