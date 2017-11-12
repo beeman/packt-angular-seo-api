@@ -6,6 +6,11 @@
     "validateUpsert": true,
     "forceId": false
   },
+  "mixins": {
+    "Paginate": {
+      "limit": "10"
+    }
+  },
   "properties": {
     "id": {
       "type": "string",
