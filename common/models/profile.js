@@ -27,4 +27,11 @@ module.exports = (Profile) => {
 
   disabledMethods.forEach(method => Profile.disableRemoteMethodByName(method))
 
+  Profile.observe('loaded', (ctx, next) => {
+    if (ctx.data && ctx.data.firstName && ctx.data.lastName) {
+      ctx.data.fullName = `${ctx.data.firstName} ${ctx.data.lastName}`
+    }
+    return next()
+  });
+
 };

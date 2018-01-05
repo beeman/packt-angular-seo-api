@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "server/server.js",
   "now": {
-    "name": "packt-angular-seo-api",
+    "name": "packt-angular-social-api",
     "alias": [
-      "packt-angular-seo-api"
+      "packt-angular-social-api",
+      "packt-angular-social"
     ],
     "env": {
-      "IMAGE_ROOT": "https://packt-angular-seo-api.now.sh/avatars/"
+      "IMAGE_ROOT": "https://packt-angular-social-api.now.sh/avatars/"
     }
   },
   "scripts": {
@@ -45,5 +46,5 @@
     "url": ""
   },
   "license": "UNLICENSED",
-  "description": "packt-angular-seo-api"
+  "description": "packt-angular-social-api"
 }
