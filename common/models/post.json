@@ -33,9 +33,6 @@
     "image": {
       "type": "string"
     },
-    "link": {
-      "type": "string"
-    },
     "date": {
       "type": "date",
       "required": true

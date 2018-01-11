@@ -9,7 +9,7 @@
       "packt-angular-social"
     ],
     "env": {
-      "IMAGE_ROOT": "https://packt-angular-social-api.now.sh/avatars/"
+      "IMAGE_ROOT": "https://packt-angular-social-api.now.sh/"
     }
   },
   "scripts": {

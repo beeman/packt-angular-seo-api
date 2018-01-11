@@ -7,10 +7,15 @@ const profiles = require('./sample-data/profiles.json')
 const posts = require('./sample-data/posts.json')
 
 // Get the image root from the environment or use the default value for local development
-const imageRoot = process.env.IMAGE_ROOT || 'http://localhost:3000/avatars/'
+const imageRoot = process.env.IMAGE_ROOT || 'http://localhost:3000/'
 
 // Helper to map over the items and prepend the image url
-const setAvatarUrl = (items) => items.map(item => Object.assign(item, {avatar: imageRoot + item.avatar}))
+const setAvatarUrl = (items) => items
+  .map(item => Object.assign(item, {avatar: imageRoot + 'avatars/' + item.avatar}))
+
+// Helper to map over the items and prepend the image url
+const setImageUrl = (items) => items
+  .map(item => item.type !== 'image' ? item : Object.assign(item, {image: imageRoot + 'images/' + item.image}))
 
 // Helper method to remove all items from a model and create new ones
 const removeAllAddNew = (model, data) => Promise.resolve()
@@ -21,5 +26,5 @@ const removeAllAddNew = (model, data) => Promise.resolve()
 // The actual boot script loads the patched profiles
 module.exports = app => Promise.all([
   removeAllAddNew(app.models.Profile, setAvatarUrl(profiles)),
-  removeAllAddNew(app.models.Post, posts),
+  removeAllAddNew(app.models.Post, setImageUrl(posts)),
 ])
